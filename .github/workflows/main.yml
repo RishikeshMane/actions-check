@@ -16,10 +16,14 @@ jobs:
       - uses: gitleaks/gitleaks-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUBT_TOKEN }}
-  manual1:
-    - name: "demo"
-        run: |
-          echo "running"
+  bash-example:
+    runs-on: self-hosted
+    env:
+      MY_NAME: "Mona The Octocat"
+    steps:
+      - uses: actions/checkout@v6
+      - name: bash-version
+        run: "bash"
 
     
   # sonarqube:
